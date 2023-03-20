@@ -13,14 +13,14 @@ import re
 from Myinstaloader import MyInstaLoader 
 
 # Your bot token obtained from BotFather
-BOT_TOKEN = '6036185222:AAHkykI2YGW9ZwdIARY8pdxEbq52LNbNrnQ'
+BOT_TOKEN = 'token'
 
 BOT_NAME = "@downloader_mybot"
 # Create bot and dispatcher instances
 bot = Bot(token=BOT_TOKEN)
 dp = Dispatcher(bot)
 
-loader = MyInstaLoader("test_python08","javohir8558@@")
+loader = MyInstaLoader("username","password")
 
 # Define the MyInstaLoader class
 
