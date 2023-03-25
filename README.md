@@ -19,6 +19,7 @@ This script allows you to download photos and videos from Instagram. You can sim
 - PASSWORD = your instagram _password_
 - BOT_NAME = Your bot's _username_
 
+##
 The script will prompt you to enter the Instagram username of the profile you want to download. Once you enter the username, it will download all photos and videos from the user's profile to the current working directory.
 
 **Note** that the script uses the Instaloader library to download photos and videos from Instagram. You may need to authenticate with Instagram if you encounter rate limiting issues while using the script.
