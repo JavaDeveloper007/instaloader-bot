@@ -4,8 +4,9 @@ python libraries aiogram, instaloader
 Instagram Video and Photo Loader
 This script allows you to download photos and videos from Instagram. You can simply enter the Instagram Link and it will download all photos and videos from given the Link.
 
-##Usage
-*To use the script, simply run the following command:
+
+**Usage**
+* To use the script, simply run the following command:
   **pip install -r requirements.txt**
 
 - get token from telegram _BotFather_
