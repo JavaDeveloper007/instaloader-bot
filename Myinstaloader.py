@@ -78,14 +78,4 @@ class MyInstaLoader:
         self.successfully = self.L.download_post(post=self.post,target=self.target_path) # target -> yuklangan video qayerga tushsin
 
 
-        return self 
-
-
-if __name__ == "__main__":
-    url = 'https://www.instagram.com/link'
-    user,password = "username","password"
-    folder_name = "11223344"   # botda, from.user.id
-
-    user1 = MyInstaLoader(user=user,password=password)
-    user1.get_shortcode(url=url)
-    user1.download_shortcode(file_path=user1.PATH.parent,folder_name=f"DataMedia\{folder_name}")
+        return self
