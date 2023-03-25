@@ -82,9 +82,9 @@ class MyInstaLoader:
 
 
 if __name__ == "__main__":
-    url = 'https://www.instagram.com/p/CkSQFtWoQIa/?utm_source=ig_web_button_share_sheet'
-    user,password = "test_python08","javohir8558@@"
-    folder_name = "445566"   # botda, user_id
+    url = 'https://www.instagram.com/link'
+    user,password = "username","password"
+    folder_name = "11223344"   # botda, from.user.id
 
     user1 = MyInstaLoader(user=user,password=password)
     user1.get_shortcode(url=url)
