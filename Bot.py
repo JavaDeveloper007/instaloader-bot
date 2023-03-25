@@ -1,28 +1,33 @@
-
 from aiogram import Bot, types
 from aiogram.dispatcher import Dispatcher
 from aiogram.utils import executor
-from aiogram.types import InputMediaVideo, MediaGroup, InputFile
+from aiogram.types import InputFile
 from aiogram.dispatcher.filters import Command
 import instaloader
 import shutil
-
+from contextlib import suppress
 from pathlib import Path
-import re
-
+from environs import Env
+# Define the MyInstaLoader class
 from Myinstaloader import MyInstaLoader 
 
-# Your bot token obtained from BotFather
-BOT_TOKEN = '6036185222:AAHkykI2YGW9ZwdIARY8pdxEbq52LNbNrnQ'
+env = Env()
+env.read_env()
 
-BOT_NAME = "@downloader_mybot"
+# Data
+BOT_TOKEN = env.str("BOT_TOKEN")  # Bot token
+USER = env.str("USER")
+PASSWORD = env.str("PASSWORD")
+BOT_NAME = env.str("BOT_NAME") # for example: "@downloader_mybot"
+
+
+
 # Create bot and dispatcher instances
 bot = Bot(token=BOT_TOKEN)
 dp = Dispatcher(bot)
 
-loader = MyInstaLoader("test_python08","javohir8558@@")
+loader = MyInstaLoader("test_python08","fjavohir8558@@")
 
-# Define the MyInstaLoader class
 
 # Define the start command handler
 @dp.message_handler(Command("start"))
@@ -71,7 +76,11 @@ async def handle_url(message: types.Message):
            await loader.download_shortcode(file_path=loader.PATH.parent,folder_name=f"DataMedia\{user_id}")
         except instaloader.exceptions.ConnectionException:
             file_path = Path(fr"{loader.PATH.parent}\{loader.USER}")
-            file_path.unlink()
+            
+            with suppress(FileNotFoundError):
+                file_path.unlink()
+                raise Exception("Katta extimol bilan, instagram sizning akkauntingiz buzib krilgan deb o'ylayopdi\n web/app/exe orqali Login qilib instagramga kring va akkauntingiz buzib krilmaganini tasdiqlang")
+
             await loader.download_shortcode(file_path=loader.PATH.parent,folder_name=f"DataMedia\{user_id}")
 
         if not loader.successfully:
