@@ -26,7 +26,7 @@ BOT_NAME = env.str("BOT_NAME") # for example: "@downloader_mybot"
 bot = Bot(token=BOT_TOKEN)
 dp = Dispatcher(bot)
 
-loader = MyInstaLoader("test_python08","fjavohir8558@@")
+loader = MyInstaLoader("username","password")
 
 
 # Define the start command handler
